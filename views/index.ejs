@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+
+    <link  rel="stylesheet" href="css/style.css">
+
+    <script src="https://kit.fontawesome.com/dd57d14d29.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>My Recipes</h1>
+    <ul class="recipes">
+        <!-- Loop through quotes -->
+        <% for(let i = 0; i < recipes.length; i++){%>
+            <li class="recipe">
+                <span><%=recipes[i].name %></span>
+                <span><%=recipes[i].step1 %></span>
+            </li>
+        <% } %>
+    </ul>
+    <h2>Add a Recipe</h2>
+    <form action="/recipes" method="POST">
+        <input type="text" placeholder="name" name="name">
+        <input class="instructions" type="text" placeholder="instructions" name="step1">
+        <input type="checkbox" name="timer" id="time1"><span>Timer?</span>
+        <button type="submit">Submit</button>
+        
+    </form>
+
+    <h2>Test<i class="fa-solid fa-plus-large"></i></h2>
+
+   
+
+</body>
+</html>
